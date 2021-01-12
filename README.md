@@ -175,7 +175,11 @@ _I think that smaller files have worse performance because hardware fluctuations
 
 ### Motivation
 
-- A real personal need for a flexible but fast* CSV -> CSV processor.
+- A real personal need for a flexible but (somewhat) fast CSV -> CSV processor.
 - An opportunity to play around with new Java kids, Quarkus and GraalVM.
 
-_\*fast: see my own personal benchmark bellow._
+### Credits
+
+- https://www.graalvm.org/
+- https://quarkus.io/
+- http://picocli.info/
