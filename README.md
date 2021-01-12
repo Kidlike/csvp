@@ -11,6 +11,10 @@ Written with minimal effort, with the help and limitations of https://quarkus.io
 
 _\*fast: see my own personal benchmark bellow._
 
+## Installing this
+- Grab the binary or jar file from [/releases](https://github.com/Kidlike/csvp/releases/)
+- or build yourself (see bellow)
+
 ## Running this
 
 - **Needs** the `SMALLRYE_CONFIG_LOCATIONS` env-var to be set, and pointing to a `yaml` config file.
