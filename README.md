@@ -128,6 +128,8 @@ OS name: "linux", version: "5.9.16-200.fc33.x86_64", arch: "amd64", family: "uni
 
 - `mvn clean install -DskipTests -Pnative` produces `target/csvp-1.0-SNAPSHOT-runner`
 
+More info can be found here: https://quarkus.io/guides/building-native-image
+
 ### Details of native binary
 
 There should be no system dependencies for the native binary:
