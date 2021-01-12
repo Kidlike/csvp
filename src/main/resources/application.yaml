@@ -1,0 +1,8 @@
+quarkus:
+    log:
+        level: SEVERE
+    banner:
+        enabled: false
+    native:
+        additional-build-args:
+            - "--language:js"

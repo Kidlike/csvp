@@ -1,0 +1,10 @@
+# intellij
+.idea
+*.iml
+
+# maven
+target/
+
+# app specific
+/*.csv
+/*.yaml
