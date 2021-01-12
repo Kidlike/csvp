@@ -107,11 +107,11 @@ OS name: "linux", version: "5.9.16-200.fc33.x86_64", arch: "amd64", family: "uni
 
 #### Compile to jar
 
-- `mvn clean install -DskipTests` -> produces `target/csvp-1.0-SNAPSHOT-runner.jar`
+- `mvn clean install -DskipTests` produces `target/csvp-1.0-SNAPSHOT-runner.jar`
 
 #### Compile to native binary
 
-- `mvn clean install -DskipTests -Pnative` -> produces `target/csvp-1.0-SNAPSHOT-runner`
+- `mvn clean install -DskipTests -Pnative` produces `target/csvp-1.0-SNAPSHOT-runner`
 
 ## Details of native binary
 
@@ -140,6 +140,6 @@ I used a real personal example with some complexity:
 - 68 lines of javascript with 18 regular expressions, 14 variables, and 2 functions
 - input CSV of 21 columns in various size samples: 10k, 50k, and 100k rows (34MB)
 
-=> performance was between **20000 and 30000 rows / second**
+=> performance outcomes were between **20000 and 30000 rows / second**
 
-_Naturally, smaller files had worse performance because hardware fluctuations have a more significant impact (CPU context switching, etc)_
+_I think that smaller files have worse performance because hardware fluctuations have a more significant impact (CPU context switching, etc)_
