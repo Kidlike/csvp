@@ -4,6 +4,13 @@ A csv -> csv processor with user defined JS to transform each row.
 
 Written with minimal effort, with the help and limitations of https://quarkus.io/ :)
 
+##### Motivation
+
+- A real personal need for a flexible but fast* csv -> csv processor.
+- An opportunity to play around with new Java kids, Quarkus and GraalVM.
+
+_*fast: check performance bellow_
+
 ### Installing this
 - Grab the binary or jar file from [/releases](https://github.com/Kidlike/csvp/releases/)
 - or build it yourself (see bellow)
@@ -171,12 +178,6 @@ I used a real personal example with some complexity:
 => performance outcomes were between **20000 and 30000 rows / second**
 
 _I think that smaller files have worse performance because hardware fluctuations have a more significant impact (CPU context switching, etc)_
-
-
-### Motivation
-
-- A real personal need for a flexible but (somewhat) fast CSV -> CSV processor.
-- An opportunity to play around with new Java kids, Quarkus and GraalVM.
 
 ### Credits
 
