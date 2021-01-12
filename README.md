@@ -11,7 +11,7 @@ Written with minimal effort, with the help and limitations of https://quarkus.io
 ### Running this
 
 - **Needs** the `SMALLRYE_CONFIG_LOCATIONS` env-var to be set, and pointing to a `yaml` config file.
-  - _https://github.com/quarkusio/quarkus/issues/1218_
+  - It would be really nice to have a `-c <file>` argument, but unfortunately it is currently a limitation: https://github.com/quarkusio/quarkus/issues/1218
 - Other i/o options are provided from the command line:
 
 ```
