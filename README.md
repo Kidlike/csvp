@@ -49,7 +49,7 @@ b,2
 c,3
 ```
 
-#### Full YAML config file
+#### A more verbose YAML config file
 
 ```yaml
 input: # Configs for the input CSV file
