@@ -4,18 +4,11 @@ A csv -> csv processor with user defined JS to transform each row.
 
 Written with minimal effort, with the help and limitations of https://quarkus.io/ :)
 
-#### Motivation
-
-- A real personal need for a flexible but fast* CSV -> CSV processor.
-- An opportunity to play around with new Java kids, Quarkus and GraalVM.
-
-_\*fast: see my own personal benchmark bellow._
-
-## Installing this
+### Installing this
 - Grab the binary or jar file from [/releases](https://github.com/Kidlike/csvp/releases/)
 - or build yourself (see bellow)
 
-## Running this
+### Running this
 
 - **Needs** the `SMALLRYE_CONFIG_LOCATIONS` env-var to be set, and pointing to a `yaml` config file.
   - _https://github.com/quarkusio/quarkus/issues/1218_
@@ -30,12 +23,38 @@ Usage: csvp [-hV] [-i=file] [-o=file]
   -V, --version       Print version information and exit.
 ```
 
-#### The YAML config file
+#### Example: reverse column order
+```
+$ cat sample.yaml
+input:
+    delimiter: >-
+        ,
+output:
+    delimiter: >-
+        ,
+    row-transform: >-
+        return [
+            row[1],
+            row[0]
+        ];
+
+$ cat sample.csv
+1,a
+2,b
+3,c
+
+$ SMALLRYE_CONFIG_LOCATIONS=sample.yaml csvp-1.0 -i sample.csv
+a,1
+b,2
+c,3
+```
+
+#### Full YAML config file
 
 ```yaml
 input: # Configs for the input CSV file
     delimiter: ;
-    has-header: true # Whether the input contains a header or not
+    has-header: false # Whether the input contains a header or not (defaults to true)
 output: # Configs for the CSV output
     delimiter: ;
     headers: # Omitting this will not produce a header line
@@ -74,11 +93,7 @@ output: # Configs for the CSV output
         ];
 ```
 
-### Example usage
-
-- `SMALLRYE_CONFIG_LOCATIONS=my-config.yaml java -jar target/csvp-1.0-SNAPSHOT-runner.jar -i my-input-file.csv`
-
-## Building the application
+### Building the application
 
 #### Prerequisites
 
@@ -113,7 +128,7 @@ OS name: "linux", version: "5.9.16-200.fc33.x86_64", arch: "amd64", family: "uni
 
 - `mvn clean install -DskipTests -Pnative` produces `target/csvp-1.0-SNAPSHOT-runner`
 
-## Details of native binary
+### Details of native binary
 
 There should be no system dependencies for the native binary:
 ```
@@ -143,3 +158,11 @@ I used a real personal example with some complexity:
 => performance outcomes were between **20000 and 30000 rows / second**
 
 _I think that smaller files have worse performance because hardware fluctuations have a more significant impact (CPU context switching, etc)_
+
+
+### Motivation
+
+- A real personal need for a flexible but fast* CSV -> CSV processor.
+- An opportunity to play around with new Java kids, Quarkus and GraalVM.
+
+_\*fast: see my own personal benchmark bellow._
