@@ -6,7 +6,7 @@ Written with minimal effort, with the help and limitations of https://quarkus.io
 
 ### Installing this
 - Grab the binary or jar file from [/releases](https://github.com/Kidlike/csvp/releases/)
-- or build yourself (see bellow)
+- or build it yourself (see bellow)
 
 ### Running this
 
@@ -43,7 +43,7 @@ $ cat sample.csv
 2,b
 3,c
 
-$ SMALLRYE_CONFIG_LOCATIONS=sample.yaml csvp-1.0 -i sample.csv
+$ SMALLRYE_CONFIG_LOCATIONS=sample.yaml csvp -i sample.csv
 a,1
 b,2
 c,3
@@ -144,6 +144,17 @@ $ ldd target/csvp-1.0-SNAPSHOT-runner
 
 #### Performance of native binary
 
+##### Startup time
+I'm not sure if this is the best way to test this, but I used `GNU time` by invoking `csvp --version`.
+
+The median of 10 executions was:
+```
+real    0m0.065s
+user    0m0.021s
+sys     0m0.033s
+```
+
+##### Throughput
 This is just a preliminary test to get an order-of-magnitude idea of performance.
 
 Basic hardware specs:
